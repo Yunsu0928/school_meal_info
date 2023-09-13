@@ -1,0 +1,172 @@
+@font-face {
+	font-family: "YeongdeokSea";
+	font-weight: 50;
+	src: url("./fonts/Yeongdeok\ Sea.ttf");
+}
+
+@font-face {
+	font-family: "IM_Hyemin-Bold";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.container {
+	font-family: "IM_Hyemin-Bold";
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.innerContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 100px;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	> img {
+		width: 600px;
+	}
+}
+
+.section1 {
+	width: 800px;
+	padding: 10px;
+	margin: 10px;
+	margin-bottom: 50px;
+	border-radius: 40px;
+	background-color: #eeeeee;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.section2 {
+	width: 800px;
+	padding: 10px;
+	margin-bottom: 30px;
+	border-radius: 40px;
+	background-color: #eeeeee;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.searchbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdown {
+	font-size: 15px;
+	margin: 10px;
+	padding: 10px 20px;
+	width: 200px;
+	height: 50px;
+	border-radius: 10px;
+	border: none;
+}
+
+.dropdown2 {
+	font-size: 15px;
+	padding: 10px 20px;
+	width: 400px;
+	height: 50px;
+	border-radius: 10px;
+	border: none;
+}
+
+.result {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 30px;
+	font-size: 50px;
+}
+
+.input {
+	font-size: 15px;
+	padding: 0px 20px;
+	width: 200px;
+	height: 50px;
+	border-radius: 10px;
+	border: none;
+}
+
+.inputdate {
+	font-size: 15px;
+	margin-bottom: 40px;
+	padding: 0px 30px;
+	width: 300px;
+	height: 50px;
+	border-radius: 10px;
+	border: none;
+}
+
+button {
+	font-family: "YeongdeokSea";
+	font-size: 20px;
+	margin: 10px;
+	width: 100px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #ff6f40;
+	color: #fff;
+	border: none;
+}
+
+.mealbtn {
+	font-family: "YeongdeokSea";
+	font-size: 20px;
+	margin: 10px;
+	width: 100px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #ff6f40;
+	color: #fff;
+	border: none;
+}
+
+p {
+	font-size: 30px;
+}
+
+.mealdata {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 20px;
+	width: 800px;
+	height: 240px;
+	border-radius: 40px;
+	background-color: #eeeeee;
+	font-size: 20px;
+}
+
+.mealno {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 20px;
+	width: 800px;
+	height: 240px;
+	border-radius: 40px;
+	background-color: #eeeeee;
+	font-size: 20px;
+}
