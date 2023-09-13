@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import cityCode from "./data/cityCode";
 import main from "./assets/main_logo.png";
 
@@ -12,21 +12,10 @@ function App() {
 	const [schCode, setSchCode] = useState("");
 	const [date, setDate] = useState("20230915");
 	const [mealData, setMealData] = useState("");
-	// 학교기본정보
-	// https://open.neis.go.kr/hub/schoolInfo?KEY=${serviceKey}&Type=json&pIndex=1&pSize=1000&ATPT_OFCDC_SC_CODE=${cityCode[0]}
-	// console.log(Object.keys(cityCode));
-
-	// TODO: api받아오기, cityCode랑 검색input 둘다에 맞는 데이터 받아와서 dropdown2에 넣어주기
-	// select에있는 코드값을 useState에 넣어주기
-	// Object.Entries >> 값이 배열 안에 또 배열로 들어오는데, 그 배열의 첫번째 요소가 키고 두번쨰 요소가 값이다 >> 선택되는것의 value는 코드값이어야 하니까
-	// 검색기능
-
-	// console.log(mealData);
 
 	const onChangeSelectHandler = (e) => {
 		setCode(e.target.value);
 	};
-	// console.log(search);
 
 	const onChangeInputHandler = (e) => {
 		setSearch(e.target.value);
@@ -43,7 +32,6 @@ function App() {
 				.then((res) => res.json())
 				.then((res) => {
 					setData(res.schoolInfo[1].row);
-					// console.log(res.schoolInfo[1].row);
 				});
 		}
 	};
@@ -90,7 +78,6 @@ function App() {
 						<button onClick={onClickBtnHandler}>학교 검색</button>
 					</div>
 					<div className="result">
-						{/* <p>학교 검색 결과</p> */}
 						<select
 							className="dropdown2"
 							onChange={(e) => {
@@ -122,6 +109,7 @@ function App() {
 				<button className="mealbtn" onClick={onClickBtnMealHandler}>
 					급식 검색
 				</button>
+        {/* split("<br>")을 기준으로 작성하면 더 편리하게 css 작업가능 */}
 				{mealData.DDISH_NM ? (
 					<div
 						className="mealdata"
@@ -130,11 +118,6 @@ function App() {
 				) : (
 					<div className="mealno">급식 데이터가 존재하지 않습니다</div>
 				)}
-				{/* <div dangerouslySetInnerHTML={{ __html: mealData.DDISH_NM }}>
-					{mealData.DDISH_NM.split("<br>").map((e) => (
-						<div>{e}</div>
-					))}
-				</div> */}
 			</div>
 		</div>
 	);
