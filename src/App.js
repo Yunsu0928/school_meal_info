@@ -10,7 +10,7 @@ function App() {
 	const [search, setSearch] = useState("");
 	const [data, setData] = useState([]);
 	const [schCode, setSchCode] = useState("");
-	const [date, setDate] = useState("20230915");
+	const [date, setDate] = useState("2023-09-15");
 	const [mealData, setMealData] = useState("");
 
 	const onChangeSelectHandler = (e) => {
@@ -44,8 +44,16 @@ function App() {
 		)
 			.then((res) => res.json())
 			.then((res) => {
-				console.log(res.mealServiceDietInfo[1].row[0]);
-				setMealData(res.mealServiceDietInfo[1].row[0]);
+				console.log(res);
+				if (res.RESULT) {
+					return;
+				} else {
+					console.log(res?.mealServiceDietInfo[1].row[0]);
+					setMealData(res?.mealServiceDietInfo[1].row[0]);
+					console.log(
+						res?.mealServiceDietInfo[1].row[0].DDISH_NM.split("<br/>")
+					);
+				}
 			});
 	};
 
@@ -109,8 +117,8 @@ function App() {
 				<button className="mealbtn" onClick={onClickBtnMealHandler}>
 					급식 검색
 				</button>
-        {/* split("<br>")을 기준으로 작성하면 더 편리하게 css 작업가능 */}
-				{mealData.DDISH_NM ? (
+				{/* split("<br>")을 기준으로 작성하면 더 편리하게 css 작업가능 */}
+				{mealData?.DDISH_NM ? (
 					<div
 						className="mealdata"
 						dangerouslySetInnerHTML={{ __html: mealData.DDISH_NM }}
